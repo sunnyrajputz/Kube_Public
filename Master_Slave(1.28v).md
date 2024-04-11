@@ -179,6 +179,11 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 sudo kubeadm init
 ```
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 **Generate a token for worker nodes to join**
 ```
 sudo kubeadm token create --print-join-command
