@@ -108,31 +108,24 @@ sudo wget https://github.com/opencontainers/runc/releases/download/v1.1.7/runc.a
 ```
 sudo install -m 755 runc.amd64 /usr/local/sbin/runc
 ```
-**Version Installed: v1.1.7**
+**Version Installed: v1.2.0**
 **Link:** https://github.com/opencontainers/runc/releases
 
 **Install CNI Plugin**
 ```
 sudo wget https://github.com/containernetworking/plugins/releases/download/v1.2.0/cni-plugins-linux-amd64-v1.2.0.tgz
 ```
+**Move Plugins to CNI Directory:**
 ```
-sudo cp cni-plugins-linux-amd64-v1.2.0.tgz /opt/cni/bin/
-cd /opt/cni/bin
-```
-```
-tar -xzvf cni-plugins-linux-amd64-v1.2.0.tgz
-```
-**Version Installed: v1.2.0**
-**Link:** https://github.com/containernetworking/plugins/releases
-
-**ERROR:-**
-—------------**Replace**-----------------------------------
-
-```
-curl -fLo cni-plugins-linux-amd64-v1.1.1.tgz \
-https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
 sudo mkdir -p /opt/cni/bin
-sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
+sudo mv ./cni-plugins-linux-amd64-v1.2.0/* /opt/cni/bin/
+```
+```
+tar -xvf cni-plugins-linux-amd64-v1.2.0.tgz
+```
+**Set Permisssion: Ensure the binaries have the correct permissions:**
+```
+sudo chmod +x /opt/cni/bin/*
 ```
 —-------------------------------------------------------------
 
