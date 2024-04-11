@@ -120,7 +120,7 @@ sudo wget https://github.com/containernetworking/plugins/releases/download/v1.2.
 **Move Plugins to CNI Directory:**
 ```
 sudo mkdir -p /opt/cni/bin
-sudo mv cni-plugins-linux-amd64-v1.2.0 /opt/cni/bin/
+sudo mv cni-plugins-linux-amd64-v1.2.0.tgz /opt/cni/bin/
 ```
 ```
 cd /opt/cni/bin/
