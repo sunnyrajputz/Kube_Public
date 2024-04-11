@@ -79,6 +79,8 @@ sudo wget https://github.com/containerd/containerd/releases/download/v1.6.22/con
 **Copy containerd to /usr/local**
 ```
 sudo cp  containerd-1.6.22-linux-amd64.tar.gz /usr/local/
+```
+```
 cd /usr/local
 ```
 ```
