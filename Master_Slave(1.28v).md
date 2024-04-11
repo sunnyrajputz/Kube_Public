@@ -155,7 +155,7 @@ sudo systemctl restart containerd
 ```
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
-
+```
 **Note:** In releases older than Debian 12 and Ubuntu 22.04, /etc/apt/keyrings does not exist by default; you can create it by running 
 ```
 sudo mkdir -m 755 /etc/apt/keyrings
