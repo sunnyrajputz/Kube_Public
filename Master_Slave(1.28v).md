@@ -124,7 +124,7 @@ sudo mv cni-plugins-linux-amd64-v1.2.0 /opt/cni/bin/
 ```
 ```
 cd /opt/cni/bin/
-tar -xvf cni-plugins-linux-amd64-v1.2.0.tgz
+sudo tar -xvf cni-plugins-linux-amd64-v1.2.0.tgz
 ```
 **Set Permisssion: Ensure the binaries have the correct permissions:**
 ```
