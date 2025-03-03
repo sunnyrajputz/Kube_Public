@@ -41,7 +41,8 @@ EKS integrates with AWS Auto Scaling to dynamically scale the number of EC2 inst
 * EKS automatically manages the Kubernetes control plane, such as scaling, patching, and ensuring high availability.
 * You can manage the Kubernetes workloads through the Kubernetes API, AWS CLI, or other management tools.
 
-Components Required for EKS Cluster Version Upgrade
+
+# Components Required for EKS Cluster Version Upgrade
 To upgrade your EKS cluster version, several components must be considered:
 1. EKS Control Plane Version:
 * AWS manages the version of the EKS control plane. This is what you typically upgrade to take advantage of new Kubernetes features, security patches, and bug fixes.
