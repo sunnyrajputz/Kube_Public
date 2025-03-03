@@ -121,7 +121,7 @@ aws eks update-nodegroup-version --cluster-name my-cluster --nodegroup-name my-n
 ```
 
 This will upgrade the worker nodes to the new Kubernetes version. EKS will automatically create new nodes, then drain and terminate the old ones. The process is non-disruptive to your workloads if you follow the correct steps for draining nodes.
-Upgrade Self-Managed Node Groups:
+# Upgrade Self-Managed Node Groups:
 For self-managed node groups, you need to manually update the EC2 instance AMI, which corresponds to the new Kubernetes version. Here are the steps:
 Update the EC2 Instances' AMI to use a Kubernetes-compatible AMI:
 Find the latest AMI for your desired Kubernetes version:
@@ -129,7 +129,7 @@ Find the latest AMI for your desired Kubernetes version:
 aws ssm get-parameters --names "/aws/service/eks/optimized-ami/<Kubernetes-Version>/amazon-linux-2/recommended/image_id" --query "Parameters[0].Value" --output text
 ```
 
-Launch New EC2 Instances with the new AMI, ensuring that they are added to the EKS cluster and can join as worker nodes.
+# Launch New EC2 Instances with the new AMI, ensuring that they are added to the EKS cluster and can join as worker nodes.
 Drain Old Nodes (This ensures that your pods are safely moved to the new worker nodes, avoiding downtime):
 ```
 kubectl drain <node-name> --ignore-daemonsets --delete-local-data
@@ -142,13 +142,13 @@ aws ec2 terminate-instances --instance-ids <instance-id>
 ```
 
 5. Upgrade Add-ons (CoreDNS, kube-proxy, etc.)
-After upgrading the control plane and worker nodes, you also need to ensure that EKS add-ons are upgraded to the appropriate version. For example, you can update CoreDNS and kube-proxy as follows:
-bash
-Copy
+After upgrading the control plane and worker nodes, you also need to ensure that EKS add-ons are upgraded to the appropriate version. For example, you can update CoreDNS and kube-proxy as follows
+```
 aws eks update-addon --cluster-name <cluster-name> --addon-name coredns --addon-version <new-version>
 aws eks update-addon --cluster-name <cluster-name> --addon-name kube-proxy --addon-version <new-version>
+```
 
-6. Verify Cluster and Workload Health
+7. Verify Cluster and Workload Health
 After the upgrade is completed, ensure that everything is functioning correctly:
 Check Node Status:
 ```
