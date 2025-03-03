@@ -38,30 +38,29 @@ By following these steps, you can ensure a smooth upgrade process for your EKS c
 
 
 
-Key Steps:
+# Key Steps:
+
 Upgrade the EKS control plane (master nodes).
 Upgrade the worker nodes (EC2 instances).
 Ensure workloads are rescheduled and running without disruptions.
-Step-by-Step Process
+
+# Step-by-Step Process
 1. Check the current EKS Cluster Version
 Before performing any upgrade, you should verify the current version of your cluster.
 ```
 aws eks describe-cluster --name <cluster-name> --query "cluster.version"
 ```
-
-
-3. Choose the new EKS Cluster Version
+2. Choose the new EKS Cluster Version
 Find the available versions for your EKS cluster by checking the EKS release notes or using AWS CLI to list the available Kubernetes versions.
 ```
 aws eks describe-cluster --name <cluster-name> --query "cluster.version"
 aws eks list-clusters
 ```
-4. Upgrade the EKS Control Plane (Master Nodes)
+3. Upgrade the EKS Control Plane (Master Nodes)
 To upgrade the control plane to a new Kubernetes version, you will use the following AWS CLI command. This step is non-disruptive because AWS automatically handles the process for you.
-bash
-Copy
+```
 aws eks update-cluster-version --name <cluster-name> --kubernetes-version <new-version>
-
+```
 Example:
 ```
 aws eks update-cluster-version --name my-cluster --kubernetes-version 1.23
