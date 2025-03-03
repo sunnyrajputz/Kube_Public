@@ -43,13 +43,13 @@ EKS integrates with AWS Auto Scaling to dynamically scale the number of EC2 inst
 
 Components Required for EKS Cluster Version Upgrade
 To upgrade your EKS cluster version, several components must be considered:
-EKS Control Plane Version:
-AWS manages the version of the EKS control plane. This is what you typically upgrade to take advantage of new Kubernetes features, security patches, and bug fixes.
-Kubernetes Node Version:
-The worker nodes running your applications must be compatible with the new control plane version. You need to upgrade the node AMI (Amazon Machine Image) to match the Kubernetes version you are upgrading to.
-Node Group Configuration:
-EKS supports managed node groups. When upgrading the cluster version, you might also need to upgrade your managed node groups to use the appropriate Kubernetes version.
-Add-ons (e.g., CoreDNS, kube-proxy):
-EKS uses add-ons for various services like CoreDNS, kube-proxy, etc. These should be updated to be compatible with the new Kubernetes version.
-Helm and Other Third-Party Applications:
-If you’re using Helm or other third-party applications, ensure they are compatible with the new Kubernetes version.
+1. EKS Control Plane Version:
+* AWS manages the version of the EKS control plane. This is what you typically upgrade to take advantage of new Kubernetes features, security patches, and bug fixes.
+2. Kubernetes Node Version:
+* The worker nodes running your applications must be compatible with the new control plane version. You need to upgrade the node AMI (Amazon Machine Image) to match the Kubernetes version you are upgrading to.
+3. Node Group Configuration:
+* EKS supports managed node groups. When upgrading the cluster version, you might also need to upgrade your managed node groups to use the appropriate Kubernetes version.
+4. Add-ons (e.g., CoreDNS, kube-proxy):
+* EKS uses add-ons for various services like CoreDNS, kube-proxy, etc. These should be updated to be compatible with the new Kubernetes version.
+5. Helm and Other Third-Party Applications:
+* If you’re using Helm or other third-party applications, ensure they are compatible with the new Kubernetes version.
