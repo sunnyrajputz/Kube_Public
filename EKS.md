@@ -104,10 +104,10 @@ aws eks update-cluster-version --name my-cluster --kubernetes-version 1.23
 
 This will initiate the upgrade of the control plane. AWS will automatically upgrade the master node, and there will be no downtime as it will ensure high availability by upgrading control planes in a rolling manner across multiple availability zones.
 You can track the progress of the upgrade:
-bash
-Copy
-aws eks describe-cluster --name <cluster-name> --query "cluster.status"
 
+```
+aws eks describe-cluster --name <cluster-name> --query "cluster.status"
+```
 The status will indicate when the upgrade is complete.
 4. Upgrade Worker Nodes (EC2 Instances)
 After upgrading the control plane, you must upgrade the worker nodes to a compatible version. If you're using managed node groups, you can upgrade them directly.
