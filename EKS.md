@@ -24,21 +24,22 @@ EKS integrates with AWS Auto Scaling to dynamically scale the number of EC2 inst
 
 # How EKS Works
 
-EKS Cluster Setup:
-You create an EKS cluster in the AWS Management Console, specifying the VPC, subnets, and other configurations.
-EKS sets up a managed Kubernetes control plane (master nodes), which is highly available and automatically scaled.
+1. EKS Cluster Setup:
 
-Worker Nodes Setup:
-You configure worker nodes (EC2 instances) that will run your containerized applications.
-These nodes are registered with the Kubernetes control plane. EKS manages the lifecycle of these nodes.
+* You create an EKS cluster in the AWS Management Console, specifying the VPC, subnets, and other configurations.
+* EKS sets up a managed Kubernetes control plane (master nodes), which is highly available and automatically scaled.
 
-Deploying Applications:
-After the cluster is set up, you can deploy containerized applications to the cluster using standard Kubernetes deployment tools (kubectl, Helm, etc.).
-The Kubernetes scheduler deploys these applications across the available worker nodes.
+2. Worker Nodes Setup:
+* You configure worker nodes (EC2 instances) that will run your containerized applications.
+* These nodes are registered with the Kubernetes control plane. EKS manages the lifecycle of these nodes.
 
-Cluster Management:
-EKS automatically manages the Kubernetes control plane, such as scaling, patching, and ensuring high availability.
-You can manage the Kubernetes workloads through the Kubernetes API, AWS CLI, or other management tools.
+3. Deploying Applications:
+* After the cluster is set up, you can deploy containerized applications to the cluster using standard Kubernetes deployment tools (kubectl, Helm, etc.).
+* The Kubernetes scheduler deploys these applications across the available worker nodes.
+
+4. Cluster Management:
+* EKS automatically manages the Kubernetes control plane, such as scaling, patching, and ensuring high availability.
+* You can manage the Kubernetes workloads through the Kubernetes API, AWS CLI, or other management tools.
 
 Components Required for EKS Cluster Version Upgrade
 To upgrade your EKS cluster version, several components must be considered:
