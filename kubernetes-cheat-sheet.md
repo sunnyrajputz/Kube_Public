@@ -60,6 +60,11 @@ kubectl get pods
 kubectl describe pod <pod-name>
 ```
 
+### Watch Pod after terminating --> again creating by using replicaset and deployment
+```bash
+kubectl get pod -w
+```
+
 ### Delete a pod
 ```bash
 kubectl delete pod <pod-name>
