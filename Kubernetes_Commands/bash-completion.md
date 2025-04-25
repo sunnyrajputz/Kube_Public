@@ -1,4 +1,4 @@
-## Step-by-Step: Enable kubectl Bash Completion (without sudo)
+## ✅Step-by-Step: Enable kubectl Bash Completion (without sudo)
 #1. Install kubectl completion script locally
 ```bash
 mkdir -p ~/.bash_completion.d
