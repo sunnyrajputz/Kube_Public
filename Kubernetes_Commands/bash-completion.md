@@ -5,8 +5,10 @@ mkdir -p ~/.bash_completion.d
 kubectl completion bash > ~/.bash_completion.d/kubectl
 ```
 #2. Source it in your .bashrc
-Note:- Add this to the bottom of your ~/.bashrc:
-
+Note:- Add this to the bottom of your ~/.bashrc:<br>
+```
+vi ~/.bashrc
+```
 ```bash
 # Enable kubectl completion
 if [ -f "$HOME/.bash_completion.d/kubectl" ]; then
