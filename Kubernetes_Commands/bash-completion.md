@@ -32,3 +32,28 @@ source ~/.bashrc
 ```bash
 kubectl ge<TAB>
 ```
+**---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+
+## Step-by-step Instructions (Ubuntu/Debian-based systems):
+**1.Install bash-completion (if not already installed):**
+```
+sudo apt update
+sudo apt install bash-completion
+```
+
+**2.Enable bash completion in your current shell:**
+**Add the following to your ~/.bashrc (if not already present):**
+```
+source /etc/bash_completion
+```
+
+**3.Enable kubectl bash completion:<br>**
+**Append this to your ~/.bashrc:**
+```
+source <(kubectl completion bash)
+```
+**4.Reload your shell (or source the file):**
+
+```
+source ~/.bashrc
+```
