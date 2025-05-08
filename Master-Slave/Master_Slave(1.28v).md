@@ -223,8 +223,8 @@ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/we
 
 https://v1-28.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
-
-#Containerd : https://v1-30.docs.kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd
+# Docker : https://docs.docker.com/engine/install/ubuntu/
+# Containerd : https://v1-30.docs.kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd
 
 
 
