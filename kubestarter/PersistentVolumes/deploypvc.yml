@@ -27,3 +27,10 @@ spec:
         - name: my-volume
           persistentVolumeClaim:
             claimName: local-pvc
+
+
+
+# Here are some commands that we need to run to check
+# docker ps (Check weather the nginx is running or not)
+# docker exec -it <container_id> -- bash
+# cd /mnt/data
