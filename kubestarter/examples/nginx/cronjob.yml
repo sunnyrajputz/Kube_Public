@@ -39,3 +39,7 @@ spec:
               path: /backups
               type: DirectoryOrCreate
           restartPolicy: OnFailure
+
+
+# kubectl get events -n nginx --sort-by=.metadata.creationTimestamp
+
