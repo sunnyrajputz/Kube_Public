@@ -1,0 +1,19 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: demo-job
+  namespace: nginx
+spec:
+  completions: 1  # How many times need to run the job
+  parallelism: 1  # single , 2 means 2 pods same work will assign or they will work
+  template:
+    metadata:
+      name: demo-job-prod
+      labels:
+        app: batch-box
+    spec:
+      containers:
+        - name: batch-container
+          image: busybox:latest
+          command: ["sh", "-c", "echo Hello from Kubernetes Job && sleep 10"]
+      restartPolicy: Never 
