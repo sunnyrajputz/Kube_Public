@@ -1,0 +1,22 @@
+# cp deployment.yml replicaset.yml
+kind: ReplicaSet   # change
+apiVersion: apps/v1
+metadata:
+  name: nginx-replicaset   # change
+  namespace: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-replica-pod  # change
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+          - containerPort: 80
