@@ -1,4 +1,13 @@
 # KIND Cluster Setup Guide
+## Prerequisite:
+**Install Docker**
+```bash
+sudo apt-get install docker.io -y
+```
+**Add user in docker group and also activate the changes to groups**
+```
+sudo usermod -aG docker $USER && newgrp docker
+```
 
 ## 1. Installing KIND and kubectl
 Install KIND and kubectl using the provided script:
