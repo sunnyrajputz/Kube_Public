@@ -1,0 +1,29 @@
+# We have edited the deployment file, means we have added the volume inside the deployment file.
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+  namespace: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-deploy-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+          - containerPort: 80
+          volumeMounts:
+            - name: my-volume
+              mountPath: /var/www/html
+      volumes:
+        - name: my-volume
+          persistentVolumeClaim:
+            claimName: local-pvc
