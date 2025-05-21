@@ -1,21 +1,20 @@
+kind: DaemonSet
 apiVersion: apps/v1
-kind:  DaemonSet
 metadata:
   name: nginx-daemonset
-  labels:
-    tier: frontend
+  namespace: nginx
 spec:
-  template:
-    metadata:
-      labels:
-        tier: frontend
-      name: nginx
-    spec:
-      containers:
-      - image: nginx
-        name: nginx
-        ports:
-        - containerPort: 80
   selector:
     matchLabels:
-      tier: frontend
+      app: nginx
+  template:
+    metadata:
+      name: nginx-daemon-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+          - containerPort: 80
