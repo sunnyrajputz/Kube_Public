@@ -1,25 +1,26 @@
-apiVersion: networking.k8s.io/v1
 kind: Ingress
+apiVersion: networking.k8s.io/v1
 metadata:
-  name: apache-nginx-ingress
+  name: nginx-notes-ingress
+  namespace: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: "tws.com"
-    http:
+  - http:
       paths:
-      - path: /apache
+      - path:
         pathType: Prefix
-        backend:
-          service:
-            name: apache-service
-            port:
-              number: 80
-      - path: /nginx
-        pathType: Prefix
+        path: /nginx
         backend:
           service:
             name: nginx-service
             port:
               number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: notes-app-service
+            port:
+              number: 8000
