@@ -25,3 +25,4 @@ mysql -u root -p
 ```bash
 show databases;
 ```
+
