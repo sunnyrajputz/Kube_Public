@@ -1,3 +1,5 @@
+# sudo -E port-forward service/ingress-nginx-controller -n ingress-nginx 8080:80 --address=0.0.0.0
+
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
