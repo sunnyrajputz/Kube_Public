@@ -1,7 +1,9 @@
+# Nginx pod file:
+
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod
+  name: nginx
   namespace: nginx
 spec:
   containers:
