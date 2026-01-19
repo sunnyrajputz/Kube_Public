@@ -4,7 +4,7 @@ metadata:
   name: minute-backup
   namespace: nginx
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "*/1 * * * *"   # Visit --> Cron guru
   jobTemplate:
     spec:
       template:
